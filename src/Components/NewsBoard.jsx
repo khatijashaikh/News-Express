@@ -19,10 +19,15 @@ const NewsBoard = ({ category }) => {
       <h2 class="text-center">
         LATEST <span class="badge bg-danger">NEWS</span>{" "}
       </h2>
-      {articles?.length > 0 &&
-        articles.map((news, index) => {
+      {articles?.length > 0 ? (
+        articles?.map((news, index) => {
           return <NewsItem key={index} data={news} />;
-        })}
+        })
+      ) : (
+        <div>
+          <h3>Currently we are offline</h3>
+        </div>
+      )}
     </div>
   );
 };
